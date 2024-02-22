@@ -1,0 +1,43 @@
+The following are the concepts, ideas, and user stories that did not make it into the current build of the StandPoint email application:
+
+-unit tests, integration tests, and end-to-end test should be put in to ensure functionality isn't broken with further alterations being added.
+
+-code needs significant refactoring
+
+-deleted mailbox should allow emails to be permenently deleted.
+
+-the deleted mailbox should only be for inbox emails.
+
+-deleted mailbox should allow emails to be restored. This as part of the Deleted subclass.
+--deleted emails may need a means to restore to their proper order in the inbox, possibly making room for it to have its original email_id.
+---further, restoring deleted with original email_id could conflict when restoring other emails with the same email_id, so a system would need to
+   be put in to place to resolve these potential conflict.
+--alternatively, deleted emails could be assigned a new email_id when they're restored to the inbox. If a datetime is added, then the base display sort
+  be to display by datetime instead of email_id as is the curent sorting.
+
+-spam subclass should have an option in the clear the folder of all spam.
+
+-spam subclass should have an option to unmark an email as spam and as such move it back to the inbox.
+
+-deleting an email from the spam mailbox should permenently delete the emailm, instead of placing it in the deleted mailbox.
+
+-mailbox lists are always in order. currently, all search methods are linear, but a better search methodology such as binary search will be
+ better, such as with the find_email_by_id() method.
+
+
+
+
+
+
+This section contains some of the current notes from testing:
+"""
+Testing Progress without unit tests:
+-Menu navigation is working
+-Displaying an empty mailbox displays the correct message that it is empty
+-Displaying unread emails from inbox works correctly
+-Displaying all emails from mailbox is working correctly
+-Reading selected emails is working correctly
+-Emails are being correctly marked as read once they are read
+
+"""
+
