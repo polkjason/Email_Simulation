@@ -1,17 +1,17 @@
 ### --- OOP Email Simulator --- ###
 #This application has been named StandPoint as a synonym of Outlook.
-#It's purpose is to simulate an email application. Currently, the application is capable of managing inbox, deleted, and spam mailboxes.
-#The inbox, deleted, and spam mailboxes derive their base functionality from a mailbox class. Currently, only the inbox subclass has any
-#methods unique to it, but parking_lot.txt contains information on further features to be added only to deleted and spam mailboxes that are
-#unique to each.
-#A factory design pattern was intended, but requirements of the task stated for the email class to have methods within it. Regardless, OOP
-#encapsulation is adequately established to ensure only mailbox can access email data, and StandPointApplication only can manage
-#mailboxes.
+#It's purpose is to simulate an email application. Currently, the application is capable of managing inbox,
+# deleted, and spam mailboxes. The inbox, deleted, and spam mailboxes derive their base functionality from a mailbox class.
+# Currently, only the inbox subclass has any methods unique to it, but parking_lot.txt contains information on
+# further features to be added only to deleted and spam mailboxes that are unique to each.
+#A factory design pattern was intended, but requirements of the task stated for the email class to have methods within it.
+# Regardless, OOP encapsulation is adequately established to ensure only mailbox can access email data, and
+# StandPointApplication only can manage mailboxes.
 #Some methods are put in place due to belief they be useful either immediately when they were written or in future refactoring.
 #Splash text was also put in for added flare when starting the application.
-#The application is also designed to run using app.run() method to ensure cleaner execution and design. The app.display_all_mailboxes() method
-#is only included for testing and specifically as a means to quickly review the results of all the actions taken by the user when running the
-#application.
+#The application is also designed to run using app.run() method to ensure cleaner execution and design.
+# The app.display_all_mailboxes() method is only included for testing and specifically as a means to quickly review the
+# results of all the actions taken by the user when running the application.
 ###################################
 
 class Email:
@@ -80,7 +80,8 @@ class Email:
 
         return return_string
 
-    #Displays just the email_id, email_address, subject_line of the email, and whether it has been read. preview_email was chosen as the name because I couldn't think of a better method name.
+    #Displays just the email_id, email_address, subject_line of the email, and whether it has been read.
+    # Preview_email was chosen as the name because I couldn't think of a better method name.
     def preview_email(self):
         return_string = f"Email ID: {self._email_id} \n" 
         return_string += f"Subject Line: {self._subject_line} \n"
@@ -134,7 +135,9 @@ class MailBox:
 
             print(self._emails[email_index].to_string())
 
-    #Correct the email ids to make the counting contiguous. Generally, this will be called after being removed or added to a different email list
+    #Correct the email ids to make the counting contiguous.
+    # Generally, this will be called after being removed or added to
+    # a different email list
     def condense_email_ids(self):
         current_emails_count = len(self._emails)
         
@@ -427,7 +430,8 @@ def populate_inbox(app):
         # Create 3 sample emails and add it to the Inbox list.
         app.create_email_to_inbox("test_email@sebootcamp.com", "Welcome to HyperionDev", "Hello, Welcome to HyperionDev!")
         app.create_email_to_inbox("test_email@sebootcamp.com", "Great Work on the Bootcamp", "Hello, Great work on the Bootcamp!")
-        app.create_email_to_inbox("test_email@sebootcamp.com", "Your Excellent Marks", "Hello, Congratulations on achieving excellent marks in the bootcamp!")
+        app.create_email_to_inbox("test_email@sebootcamp.com", "Your Excellent Marks",\
+            "Hello, Congratulations on achieving excellent marks in the bootcamp!")
 
 
 app = StandPointApplication()
